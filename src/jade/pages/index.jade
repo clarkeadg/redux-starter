@@ -1,0 +1,20 @@
+extends ./../layouts/master.jade
+
+block vars
+  - var bodyClass = 'border-box'
+  - var pageClass = 'home'
+  - var Title = site.name + ' - ' + site.title
+  - var Url = site.url
+
+block main
+  //#counter1
+    include ../includes/counter.jade
+  //#counter2
+    include ../includes/counter.jade
+  //#counter3
+    include ../includes/counter.jade
+  //#counter4
+    include ../includes/counter.jade
+
+block js-bottom
+

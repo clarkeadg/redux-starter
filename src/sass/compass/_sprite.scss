@@ -1,0 +1,34 @@
+@import "compass/utilities/sprites";
+
+.sprite-cont {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    opacity: 0;
+    .sprite {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+body.mobile, body.tablet, body.desktop, body.xl-desktop {
+    .sprite-cont {
+        opacity: 1;
+    }
+}
+
+// Generate Desktop Sprite
+$spr-sprite-dimensions: true;
+$spr-layout:horizontal;
+$spr-spacing: 10px;
+@import "spr/*.png";
+@include all-spr-sprites;
+

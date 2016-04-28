@@ -1,0 +1,103 @@
+include ../mixins/sprite.jade
+include ../mixins/icon.jade
+
+doctype html
+html(lang="en", data-i18n="[lang]site.lang")
+
+  - var SiteName = site.name
+  - var Keywords = site.keywords
+  - var Description = site.description
+  - var ogImg = site.ogImg
+  - var twitterImg = site.twitterImg
+  - var twitterSite = site.twitterSite
+  - var Viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+
+  block vars
+    - var bodyClass = 'border-box'
+    - var pageClass = ''
+    - var Title = site.name + ' - ' + site.title
+    - var Url = site.url
+
+  head
+
+    block title
+      title= Title
+
+    block meta
+      meta(charset="utf-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="description", content="#{Description}")
+      meta(name="keywords", content="#{Keywords}")
+      meta(name="viewport", content="#{Viewport}")
+      meta(name="robots", content="index, follow")
+      meta(property="og:site_name", content="#{SiteName}")
+      meta(property="og:type", content="website")
+      meta(property="og:url", content="#{Url}")
+      meta(property="og:title", content="#{Title}")
+      meta(property="og:image", content="#{ogImg}")
+      meta(property="og:description", content="#{Description}")
+      meta(name="twitter:card", content="summary_large_image")
+      meta(name="twitter:site", content="#{twitterSite}")
+      meta(name="twitter:title", content="#{Title}")
+      meta(name="twitter:description", content="#{Description}")
+      meta(name="twitter:image", content="#{twitterImg}")
+
+    block metaLinks
+      link(rel='shortcut icon', href='#{site.favicon}')
+      link(rel='canonical', href='#{Url}')
+
+    block robotLinks
+
+    block css
+      link(href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900', rel='stylesheet')
+      link(href='http://fonts.googleapis.com/css?family=Titillium+Web', rel='stylesheet')
+
+      // build:css css/main.min.css
+      link(href='css/style.css', rel='stylesheet')
+      // endbuild
+
+    block css-bottom
+
+
+    //include ../includes/google-analytics.jade
+
+  body(class="#{bodyClass} #{pageClass}")
+
+    //include ../includes/google-tagmanager.jade
+
+    #site
+      block header
+        //include ../includes/header.jade
+
+      block main
+        span Hello
+
+      block footer
+        //include ../includes/footer2.jade
+
+      block nav
+        //include ../includes/nav.jade
+
+    block js
+      // build:js js/vendors.min.js
+      script(type='text/javascript' src='lib/jquery/dist/jquery.min.js')
+      script(type='text/javascript' src='lib/redux/index.js')
+      // endbuild
+
+      //script(type='text/javascript' src='js/config.js')
+
+      // build:js js/main.min.js
+      script(type='text/javascript' src='js/core/app.js')
+      script(type='text/javascript' src='js/counter/constants.js')
+      script(type='text/javascript' src='js/counter/reducers.js')
+      script(type='text/javascript' src='js/core/store.js')
+      script(type='text/javascript' src='js/counter/actions.js')
+      script(type='text/javascript' src='js/counter/components.js')
+      script(type='text/javascript' src='js/index.js')
+      // endbuild
+
+    block js-bottom
+
+
+
+

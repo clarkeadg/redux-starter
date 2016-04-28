@@ -1,0 +1,15 @@
+{
+  "name": "frontend-redux",
+  "private": true,
+  "main": [],
+  "ignore": [],
+  "overrides": {},
+  "devDependencies": {
+    "jquery": "1.11.1",
+    "redux": "https://npmcdn.com/redux@latest/dist/redux.min.js",
+    "redux-undo": "https://npmcdn.com/redux-undo@latest/lib/index.js",
+    "redux-thunk": "https://npmcdn.com/redux-thunk@latest/dist/redux-thunk.min.js",
+    "redux-promise": "https://npmcdn.com/redux-promise@latest/lib/index.js",
+    "redux-logger": "https://npmcdn.com/redux-logger@latest/dist/index.min.js"
+  }
+}

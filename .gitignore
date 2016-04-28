@@ -1,0 +1,13 @@
+*.psd
+src/videos
+src/css
+src/*.html
+src/lib
+node_modules
+.sass-cache
+.DS_Store
+*.log
+_design
+_archive
+build
+
